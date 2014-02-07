@@ -5,6 +5,15 @@
 " NOTE: You will need to replace ^[ with a raw Escape character, which you
 " can type by typing Ctrl-V and then (after releaseing Ctrl-V) the Escape key.
 
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Better copy and paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+
+
 set number
 
 set modeline
@@ -24,58 +33,14 @@ endif
 
 syntax on
 
-" Everything from here on down is optional
-" These colors are examples of what is possible
-" type :help syntax
-" or :help color within vim for more info
-" and try opening the file
-" share/vim/vim61/syntax/colortest.vim
-" Note: where share is depends on where/how you installed vim
- 
-highlight Comment       ctermfg=DarkGreen
-highlight Constant      ctermfg=DarkMagenta
-highlight Character     ctermfg=DarkRed
-highlight Special       ctermfg=DarkBlue
-highlight Identifier    ctermfg=DarkCyan
-highlight Statement     ctermfg=DarkBlue
-highlight PreProc       ctermfg=DarkBlue
-highlight Type          ctermfg=DarkBlue
-highlight Number        ctermfg=DarkBlue
-highlight Delimiter     ctermfg=DarkBlue
-highlight Error         ctermfg=Black
-highlight Todo          ctermfg=DarkBlue
-highlight WarningMsg    term=NONE           ctermfg=Black ctermbg=NONE   
-highlight ErrorMsg      term=NONE           ctermfg=DarkRed ctermbg=NONE 
-
-" These settings only affect the X11 GUI version (which is different
-" than the fully Carbonized version at homepage.mac.com/fisherbb/
-
-highlight Comment       guifg=Green                 gui=NONE
-highlight Constant      guifg=Magenta               gui=NONE
-highlight Character     guifg=Red                   gui=NONE
-highlight Special       guifg=Blue                  gui=NONE
-highlight Identifier    guifg=DarkCyan              gui=NONE
-highlight Statement     guifg=DarkGreen             gui=NONE
-highlight PreProc       guifg=Purple                gui=NONE
-highlight Type          guifg=DarkGreen             gui=NONE
-"highlight Normal                   guibg=#E0F2FF   gui=NONE
-highlight Number        guifg=Blue                  gui=NONE
-"highlight Cursor       guifg=NONE  guibg=Green
-"highlight Cursor       guifg=bg    guibg=fg
-highlight Delimiter     guifg=blue                  gui=NONE
-"highlight NonText                  guibg=lightgray gui=NONE
-"highlight Error        guifg=White guibg=Red       gui=NONE
-highlight Error         guifg=NONE  guibg=NONE      gui=NONE
-highlight Todo          guifg=Blue  guibg=Yellow    gui=NONE
-
-"#### end color settings #############  
-
 set ts=4
 
 set ruler
 
 set selectmode=mouse
-set mouse=a
+set mouse=a   " Press ALT and click 
+
+"set bs=2      " Make backspace behave normal
 
 " Smart tabbing/autoindenting
 set undolevels=100
@@ -115,3 +80,53 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
+" Everything from here on down is optional
+" These colors are examples of what is possible
+" type :help syntax
+" or :help color within vim for more info
+" and try opening the file
+" share/vim/vim61/syntax/colortest.vim
+" Note: where share is depends on where/how you installed vim
+ 
+set cursorline
+set colorcolumn=80
+highlight ColorColumn ctermbg=gray                                              
+" Highlight all after colorcolumn                                                                                                                         
+"execute "set colorcolumn=" . join(range(81,335), ',')
+highlight Comment       ctermfg=DarkGreen
+highlight Constant      ctermfg=DarkMagenta
+highlight Character     ctermfg=DarkRed
+highlight Special       ctermfg=DarkBlue
+highlight Identifier    ctermfg=DarkCyan
+highlight Statement     ctermfg=DarkBlue
+highlight PreProc       ctermfg=DarkBlue
+highlight Type          ctermfg=DarkBlue
+highlight Number        ctermfg=DarkBlue
+highlight Delimiter     ctermfg=DarkBlue
+highlight Error         ctermfg=Black
+highlight Todo          ctermfg=DarkBlue
+highlight WarningMsg    term=NONE           ctermfg=Black ctermbg=NONE   
+highlight ErrorMsg      term=NONE           ctermfg=DarkRed ctermbg=NONE 
+
+" These settings only affect the X11 GUI version (which is different
+" than the fully Carbonized version at homepage.mac.com/fisherbb/
+
+highlight Comment       guifg=Green                 gui=NONE
+highlight Constant      guifg=Magenta               gui=NONE
+highlight Character     guifg=Red                   gui=NONE
+highlight Special       guifg=Blue                  gui=NONE
+highlight Identifier    guifg=DarkCyan              gui=NONE
+highlight Statement     guifg=DarkGreen             gui=NONE
+highlight PreProc       guifg=Purple                gui=NONE
+highlight Type          guifg=DarkGreen             gui=NONE
+"highlight Normal                   guibg=#E0F2FF   gui=NONE
+highlight Number        guifg=Blue                  gui=NONE
+"highlight Cursor       guifg=NONE  guibg=Green
+"highlight Cursor       guifg=bg    guibg=fg
+highlight Delimiter     guifg=blue                  gui=NONE
+"highlight NonText                  guibg=lightgray gui=NONE
+"highlight Error        guifg=White guibg=Red       gui=NONE
+highlight Error         guifg=NONE  guibg=NONE      gui=NONE
+highlight Todo          guifg=Blue  guibg=Yellow    gui=NONE
+
+"#### end color settings #############  
