@@ -12,8 +12,6 @@ autocmd! bufwritepost .vimrc source %
 set pastetoggle=<F2>
 set clipboard=unnamed
 
-
-
 set number
 
 set modeline
@@ -48,12 +46,14 @@ set nocompatible
 set autoindent
 set smarttab
 set expandtab
+
 " Allow backspace to back over lines
 set backspace=2
 set exrc
 set shiftwidth=4
 set tabstop=4
 set cino=10
+
 " I like it writing automatically on swapping
 set autowrite
 set noshowcmd
