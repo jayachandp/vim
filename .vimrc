@@ -133,4 +133,5 @@ highlight Todo          guifg=Blue  guibg=Yellow    gui=NONE
 
 filetype indent on "for auto indent after : in python                                                                                                     
 filetype plugin on     
-let g:pydiction_location = "/Users/jay/.vim/bundle/pydiction/complete-dict"
+"for pydiction
+"let g:pydiction_location = "/Users/jay/.vim/bundle/pydiction/complete-dict"
